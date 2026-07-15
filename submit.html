@@ -29,12 +29,12 @@
         <b>BK21</b><i>스마트시티 사회안전 교육연구단</i>
       </span>
     </a>
-    <nav class="nav" aria-label="주요 메뉴"><a class="nav-link" href="index.html">홈</a><a class="nav-link" href="about.html">사업 소개</a><a class="nav-link" href="members.html">참여교수</a><span class="nav-item-drop"><a class="nav-link is-active" href="board.html">게시판<i class="nav-caret" aria-hidden="true">▾</i></a><span class="nav-dropdown"><a class="nav-drop-link" href="board.html#news">최근 소식</a><a class="nav-drop-link" href="board.html#performance">실적 등록</a><a class="nav-drop-link" href="submit.html">실적 등록하기</a></span></span><a class="nav-link" href="courses.html">공동교과목</a><a class="nav-link" href="portal.html">바로가기</a></nav>
+    <nav class="nav" aria-label="주요 메뉴"><a class="nav-link" href="index.html">홈</a><span class="nav-item-drop"><a class="nav-link" href="about.html">사업 소개<i class="nav-caret" aria-hidden="true">▾</i></a><span class="nav-dropdown"><a class="nav-drop-link" href="about.html#overview">개요</a><a class="nav-drop-link" href="about.html#consortium">4개 대학 연합</a><a class="nav-drop-link" href="members.html">참여교수</a></span></span><a class="nav-link" href="members.html">참여교수</a><span class="nav-item-drop"><a class="nav-link is-active" href="board.html">게시판<i class="nav-caret" aria-hidden="true">▾</i></a><span class="nav-dropdown"><a class="nav-drop-link" href="board.html#news">최근 소식</a><a class="nav-drop-link" href="submit.html">실적 등록하기</a></span></span><a class="nav-link" href="courses.html">공동교과목</a><a class="nav-link" href="portal.html">바로가기</a></nav>
     <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="nav-mobile"><a class="nav-link" href="index.html">홈</a><a class="nav-link" href="about.html">사업 소개</a><a class="nav-link" href="members.html">참여교수</a><a class="nav-link is-active" href="board.html">게시판</a><span class="nav-sub-mobile"><a class="nav-drop-link" href="board.html#news">최근 소식</a><a class="nav-drop-link" href="board.html#performance">실적 등록</a><a class="nav-drop-link" href="submit.html">실적 등록하기</a></span><a class="nav-link" href="courses.html">공동교과목</a><a class="nav-link" href="portal.html">바로가기</a></div>
+  <div class="nav-mobile"><a class="nav-link" href="index.html">홈</a><a class="nav-link" href="about.html">사업 소개</a><span class="nav-sub-mobile"><a class="nav-drop-link" href="about.html#overview">개요</a><a class="nav-drop-link" href="about.html#consortium">4개 대학 연합</a><a class="nav-drop-link" href="members.html">참여교수</a></span><a class="nav-link" href="members.html">참여교수</a><a class="nav-link is-active" href="board.html">게시판</a><span class="nav-sub-mobile"><a class="nav-drop-link" href="board.html#news">최근 소식</a><a class="nav-drop-link" href="submit.html">실적 등록하기</a></span><a class="nav-link" href="courses.html">공동교과목</a><a class="nav-link" href="portal.html">바로가기</a></div>
 </header>
 <main id="main">
 
@@ -53,64 +53,73 @@
           data-netlify="true" netlify-honeypot="bot-field"
           enctype="multipart/form-data" action="board.html?submitted=1">
       <input type="hidden" name="form-name" value="performance-entry">
-      <p class="hp-field"><label>비워두세요 (스팸 방지) <input name="bot-field"></label></p>
+      <p style="position:absolute;left:-5000px" aria-hidden="true">
+        <label>이 칸은 비워두세요 <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+      </p>
 
-      <div class="f-row">
+      <fieldset class="f-set">
+        <legend>작성자 정보</legend>
+        <div class="f-grid">
+          <label class="f-field">
+            <span class="f-label">이름 <em>*</em></span>
+            <input type="text" name="이름" required placeholder="예: 홍길동">
+          </label>
+          <label class="f-field">
+            <span class="f-label">구분 <em>*</em></span>
+            <select name="구분" required>
+              <option value="">선택하세요</option>
+              <option>참여교수</option>
+              <option>대학원생</option>
+              <option>학부생</option>
+            </select>
+          </label>
+          <label class="f-field">
+            <span class="f-label">소속 대학 <em>*</em></span>
+            <select name="소속대학" required>
+              <option value="">선택하세요</option>
+              <option>충북대학교</option>
+              <option>대전대학교</option>
+              <option>청주대학교</option>
+              <option>국립한밭대학교</option>
+            </select>
+          </label>
+          <label class="f-field">
+            <span class="f-label">연락 이메일 <em>*</em></span>
+            <input type="email" name="이메일" required placeholder="확인 연락용 (공개 안 됨)">
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="f-set">
+        <legend>실적 내용</legend>
         <label class="f-field">
-          <span>이름 <em>*</em></span>
-          <input type="text" name="이름" required placeholder="예: 홍길동">
+          <span class="f-label">실적 제목 <em>*</em></span>
+          <input type="text" name="제목" required placeholder="예: SCI(E) 논문 게재 – Journal of ...">
         </label>
         <label class="f-field">
-          <span>구분 <em>*</em></span>
-          <select name="구분" required>
-            <option value="">선택</option>
-            <option>참여교수</option>
-            <option>대학원생</option>
-            <option>학부생</option>
-          </select>
+          <span class="f-label">내용 <em>*</em></span>
+          <textarea name="내용" rows="6" required placeholder="실적에 대한 간단한 설명을 적어주세요."></textarea>
         </label>
+      </fieldset>
+
+      <fieldset class="f-set">
+        <legend>첨부 <span class="f-optional">선택</span></legend>
+        <div class="f-grid">
+          <label class="f-field">
+            <span class="f-label">사진</span>
+            <input type="file" name="사진" accept="image/*">
+          </label>
+          <label class="f-field">
+            <span class="f-label">파일</span>
+            <input type="file" name="첨부파일">
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="f-actions">
+        <button class="btn btn-primary" type="submit">등록하기</button>
+        <p class="f-hint">등록된 내용은 관리자 검토 후 게시판에 공개됩니다. 스팸·광고성 게시물은 삭제됩니다.</p>
       </div>
-
-      <div class="f-row">
-        <label class="f-field">
-          <span>소속 대학 <em>*</em></span>
-          <select name="소속대학" required>
-            <option value="">선택</option>
-            <option>충북대학교</option>
-            <option>대전대학교</option>
-            <option>청주대학교</option>
-            <option>국립한밭대학교</option>
-          </select>
-        </label>
-        <label class="f-field">
-          <span>연락 이메일 <em>*</em></span>
-          <input type="email" name="이메일" required placeholder="확인 연락용, 공개되지 않습니다">
-        </label>
-      </div>
-
-      <label class="f-field f-block">
-        <span>실적 제목 <em>*</em></span>
-        <input type="text" name="제목" required placeholder="예: SCI(E) 논문 게재 - Journal of ...">
-      </label>
-
-      <label class="f-field f-block">
-        <span>내용 <em>*</em></span>
-        <textarea name="내용" rows="5" required placeholder="실적에 대한 간단한 설명을 적어주세요."></textarea>
-      </label>
-
-      <div class="f-row">
-        <label class="f-field">
-          <span>사진 (선택)</span>
-          <input type="file" name="사진" accept="image/*">
-        </label>
-        <label class="f-field">
-          <span>첨부 파일 (선택)</span>
-          <input type="file" name="첨부파일">
-        </label>
-      </div>
-
-      <button class="btn btn-primary submit-btn" type="submit">등록하기</button>
-      <p class="note">※ 등록된 내용은 관리자 검토 후 게시판에 공개됩니다. 스팸·광고 목적의 게시물은 삭제됩니다.</p>
     </form>
   </div>
 </section>
