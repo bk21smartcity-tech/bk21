@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>실적 등록 · BK21 스마트시티 교육연구단</title>
+<meta name="description" content="시민체감형 사회안전 스마트시티 교육연구단 — Education and Research Group for Citizen-Centered Public Safety in Smart Cities">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34">
+          <circle cx="8" cy="8" r="3.4"/><circle cx="32" cy="8" r="3.4"/>
+          <circle cx="8" cy="32" r="3.4"/><circle cx="32" cy="32" r="3.4"/>
+          <circle cx="20" cy="20" r="4.2" class="node-c"/>
+          <path d="M8 8 L20 20 L32 8 M8 32 L20 20 L32 32" class="node-link"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>BK21</b><i>스마트시티 사회안전 교육연구단</i>
+      </span>
+    </a>
+    <nav class="nav" aria-label="주요 메뉴"><a class="nav-link" href="index.html">홈</a><a class="nav-link" href="about.html">사업 소개</a><a class="nav-link" href="members.html">참여교수</a><span class="nav-item-drop"><a class="nav-link is-active" href="board.html">게시판<i class="nav-caret" aria-hidden="true">▾</i></a><span class="nav-dropdown"><a class="nav-drop-link" href="board.html#news">최근 소식</a><a class="nav-drop-link" href="board.html#performance">실적 등록</a><a class="nav-drop-link" href="submit.html">실적 등록하기</a></span></span><a class="nav-link" href="courses.html">공동교과목</a><a class="nav-link" href="portal.html">바로가기</a></nav>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile"><a class="nav-link" href="index.html">홈</a><a class="nav-link" href="about.html">사업 소개</a><a class="nav-link" href="members.html">참여교수</a><a class="nav-link is-active" href="board.html">게시판</a><span class="nav-sub-mobile"><a class="nav-drop-link" href="board.html#news">최근 소식</a><a class="nav-drop-link" href="board.html#performance">실적 등록</a><a class="nav-drop-link" href="submit.html">실적 등록하기</a></span><a class="nav-link" href="courses.html">공동교과목</a><a class="nav-link" href="portal.html">바로가기</a></div>
+</header>
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">SUBMIT</span>
+    <h1>실적 등록</h1>
+    <p class="lead">논문·특허·수상·세미나 발표 등 실적을 자유롭게 등록해주세요.
+       등록하신 내용은 관리자 검토 후 <a href="board.html#performance">게시판</a>에 공개됩니다.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap submit-wrap">
+    <form class="submit-form" name="performance-entry" method="POST"
+          data-netlify="true" netlify-honeypot="bot-field"
+          enctype="multipart/form-data" action="board.html?submitted=1">
+      <input type="hidden" name="form-name" value="performance-entry">
+      <p class="hp-field"><label>비워두세요 (스팸 방지) <input name="bot-field"></label></p>
+
+      <div class="f-row">
+        <label class="f-field">
+          <span>이름 <em>*</em></span>
+          <input type="text" name="이름" required placeholder="예: 홍길동">
+        </label>
+        <label class="f-field">
+          <span>구분 <em>*</em></span>
+          <select name="구분" required>
+            <option value="">선택</option>
+            <option>참여교수</option>
+            <option>대학원생</option>
+            <option>학부생</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="f-row">
+        <label class="f-field">
+          <span>소속 대학 <em>*</em></span>
+          <select name="소속대학" required>
+            <option value="">선택</option>
+            <option>충북대학교</option>
+            <option>대전대학교</option>
+            <option>청주대학교</option>
+            <option>국립한밭대학교</option>
+          </select>
+        </label>
+        <label class="f-field">
+          <span>연락 이메일 <em>*</em></span>
+          <input type="email" name="이메일" required placeholder="확인 연락용, 공개되지 않습니다">
+        </label>
+      </div>
+
+      <label class="f-field f-block">
+        <span>실적 제목 <em>*</em></span>
+        <input type="text" name="제목" required placeholder="예: SCI(E) 논문 게재 - Journal of ...">
+      </label>
+
+      <label class="f-field f-block">
+        <span>내용 <em>*</em></span>
+        <textarea name="내용" rows="5" required placeholder="실적에 대한 간단한 설명을 적어주세요."></textarea>
+      </label>
+
+      <div class="f-row">
+        <label class="f-field">
+          <span>사진 (선택)</span>
+          <input type="file" name="사진" accept="image/*">
+        </label>
+        <label class="f-field">
+          <span>첨부 파일 (선택)</span>
+          <input type="file" name="첨부파일">
+        </label>
+      </div>
+
+      <button class="btn btn-primary submit-btn" type="submit">등록하기</button>
+      <p class="note">※ 등록된 내용은 관리자 검토 후 게시판에 공개됩니다. 스팸·광고 목적의 게시물은 삭제됩니다.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <div class="foot-title">시민체감형 사회안전 스마트시티 교육연구단</div>
+      <div class="foot-en">Education and Research Group for Citizen-Centered Public Safety in Smart Cities</div>
+      <div class="foot-unis">충북대학교 토목공학부 · 대전대학교 재난안전공학과 · 청주대학교 인공지능소프트웨어학과 · 국립한밭대학교 건설환경공학과</div>
+    </div>
+    <div class="foot-links">
+      <a href="about.html">사업 소개</a>
+      <a href="members.html">참여교수</a>
+      <a href="courses.html">공동교과목</a>
+      <a href="portal.html">바로가기</a>
+      <a href="mailto:byang@cbnu.ac.kr">문의</a>
+    </div>
+  </div>
+  <div class="wrap foot-logos">
+    <img src="assets/logo_cbnu.png" alt="충북대학교">
+    <img src="assets/logo_dju.png" alt="대전대학교">
+    <img src="assets/logo_cju.png" alt="청주대학교">
+    <img src="assets/logo_hanbat.png" alt="국립한밭대학교">
+    <img src="assets/logo_brainkorea.png" alt="BrainKorea">
+  </div>
+  <div class="wrap foot-base">
+    <span>© 2026 BK21 스마트시티 교육연구단</span>
+    <span>지역대학 연합형 교육연구단 지원 시범사업 · 4단계 BK21</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'), m=document.querySelector('.nav-mobile');
+  if(t&&m){t.addEventListener('click',function(){
+    var open=m.classList.toggle('open');
+    t.setAttribute('aria-expanded',open); t.classList.toggle('x',open);
+  });}
+  var nums=document.querySelectorAll('.stat-num[data-count]');
+  if(nums.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    nums.forEach(function(el){
+      var target=parseInt(el.getAttribute('data-count'),10)||0;
+      var dur=900, start=null;
+      function step(ts){
+        if(!start) start=ts;
+        var p=Math.min((ts-start)/dur,1);
+        var val=Math.round(target*(1-Math.pow(1-p,3)));
+        el.textContent=String(val).padStart(2,'0');
+        if(p<1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+})();
+</script>
+</body></html>

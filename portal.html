@@ -29,12 +29,12 @@
         <b>BK21</b><i>스마트시티 사회안전 교육연구단</i>
       </span>
     </a>
-    <nav class="nav" aria-label="주요 메뉴"><a class="nav-link" href="index.html">홈</a><a class="nav-link" href="about.html">사업 소개</a><a class="nav-link" href="members.html">참여교수</a><a class="nav-link" href="courses.html">공동교과목</a><a class="nav-link is-active" href="portal.html">바로가기</a></nav>
+    <nav class="nav" aria-label="주요 메뉴"><a class="nav-link" href="index.html">홈</a><a class="nav-link" href="about.html">사업 소개</a><a class="nav-link" href="members.html">참여교수</a><span class="nav-item-drop"><a class="nav-link" href="board.html">게시판<i class="nav-caret" aria-hidden="true">▾</i></a><span class="nav-dropdown"><a class="nav-drop-link" href="board.html#news">최근 소식</a><a class="nav-drop-link" href="board.html#performance">실적 등록</a><a class="nav-drop-link" href="submit.html">실적 등록하기</a></span></span><a class="nav-link" href="courses.html">공동교과목</a><a class="nav-link is-active" href="portal.html">바로가기</a></nav>
     <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="nav-mobile"><a class="nav-link" href="index.html">홈</a><a class="nav-link" href="about.html">사업 소개</a><a class="nav-link" href="members.html">참여교수</a><a class="nav-link" href="courses.html">공동교과목</a><a class="nav-link is-active" href="portal.html">바로가기</a></div>
+  <div class="nav-mobile"><a class="nav-link" href="index.html">홈</a><a class="nav-link" href="about.html">사업 소개</a><a class="nav-link" href="members.html">참여교수</a><a class="nav-link" href="board.html">게시판</a><span class="nav-sub-mobile"><a class="nav-drop-link" href="board.html#news">최근 소식</a><a class="nav-drop-link" href="board.html#performance">실적 등록</a><a class="nav-drop-link" href="submit.html">실적 등록하기</a></span><a class="nav-link" href="courses.html">공동교과목</a><a class="nav-link is-active" href="portal.html">바로가기</a></div>
 </header>
 <main id="main">
 
@@ -83,6 +83,21 @@
     var open=m.classList.toggle('open');
     t.setAttribute('aria-expanded',open); t.classList.toggle('x',open);
   });}
+  var nums=document.querySelectorAll('.stat-num[data-count]');
+  if(nums.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    nums.forEach(function(el){
+      var target=parseInt(el.getAttribute('data-count'),10)||0;
+      var dur=900, start=null;
+      function step(ts){
+        if(!start) start=ts;
+        var p=Math.min((ts-start)/dur,1);
+        var val=Math.round(target*(1-Math.pow(1-p,3)));
+        el.textContent=String(val).padStart(2,'0');
+        if(p<1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
 })();
 </script>
 </body></html>
